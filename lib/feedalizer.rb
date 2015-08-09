@@ -1,11 +1,11 @@
+require 'feedalizer/version'
 require "rss/maker"
 require "open-uri"
 require "hpricot"
 
 module Feedalizer
   class Feed
-    VERSION = "0.1.2"
-    IDENTIFIER = "Feedalizer/#{VERSION} (http://termos.vemod.net/feedalizer)"
+    IDENTIFIER = "Feedalizer/#{Feedalizer::VERSION} (http://termos.vemod.net/feedalizer)"
   
     attr_reader :page
 
