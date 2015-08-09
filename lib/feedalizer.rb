@@ -38,11 +38,7 @@ module Feedalizer
     end
 
     def output
-      if @rss.respond_to?(:to_feed) # Ruby >= 1.8.7
-        @rss.to_feed.to_s
-      else
-        @rss.to_rss.to_s
-      end
+      @rss.to_feed.to_s
     end
 
     def output!(target = STDOUT)
