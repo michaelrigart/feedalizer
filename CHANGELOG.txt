@@ -1,7 +1,0 @@
-Noteworthy changes:
-
-2006-08-23: Added optional limit parameter to scrape_items. (Thanks to Thanh Vinh Tang for the hint that it is needed.)
-2006-10-11: Release of version 0.1.0.
-2007-07-09: Feedalizer now uses RSS 2.0 instead of RSS 1.0.
-2008-03-27: Improved examples/sydsvenskan-nemi.rb.
-2008-03-27: Release of version 0.1.1.
