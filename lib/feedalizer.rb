@@ -50,10 +50,6 @@ module Feedalizer
         STDERR.puts [ item.title, item.date, item.link ].join("; ")
       end
     end
-  
-    # Backwards-compatibility
-    alias_method :parse_source, :grab_page
-    alias_method :source, :page
   end
 end
 # A handy wrapper for Feedalizer.new :-)

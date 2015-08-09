@@ -77,9 +77,4 @@ class TestFeedalizer < Test::Unit::TestCase
     assert output.include?("<rss")
     assert output.size > 320
   end
-  
-  def test_backwards_compatibility
-    assert @feedalizer.respond_to?(:page)
-    assert @feedalizer.respond_to?(:parse_source)
-  end
 end
