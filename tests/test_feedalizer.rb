@@ -14,7 +14,7 @@ class TestFeedalizer < Test::Unit::TestCase
 
   def test_construction
     assert_kind_of RSS::Maker::RSS20::Channel, @feedalizer.feed
-    assert_kind_of Hpricot::Doc, @feedalizer.page
+    assert_kind_of Oga::XML::Document, @feedalizer.page
   end
 
   def test_block
@@ -29,17 +29,17 @@ class TestFeedalizer < Test::Unit::TestCase
   end
 
   def test_page
-    assert_equal "Test", @feedalizer.page.search("html/head/title").text
+    assert_equal "Test", @feedalizer.page.xpath("/html/head/title").text
   end
 
   def test_scrape_items
     elements = []
 
-    @feedalizer.scrape_items("div.item") do |item, element|
+    @feedalizer.scrape_items('//div[@class="item"]') do |item, element|
       elements << element
 
       assert_kind_of RSS::Maker::RSS20::Items::Item, item
-      assert_kind_of Hpricot::Elem, element
+      assert_kind_of Oga::XML::Element, element
     end
 
     assert_equal 2, elements.size
@@ -48,7 +48,7 @@ class TestFeedalizer < Test::Unit::TestCase
   def test_scrape_items_limit
     elements = []
 
-    @feedalizer.scrape_items("div.item", 1) do |item, element|
+    @feedalizer.scrape_items('//div[@class="item"]', 1) do |item, element|
       elements << element
     end
 
@@ -56,7 +56,7 @@ class TestFeedalizer < Test::Unit::TestCase
   end
 
   def test_grab_page
-    assert_kind_of Hpricot::Doc, @feedalizer.grab_page(TEST_FILE)
+    assert_kind_of Oga::XML::Document, @feedalizer.grab_page(TEST_FILE)
   end
   
   def test_existance_of_generator

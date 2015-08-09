@@ -1,7 +1,7 @@
 require 'feedalizer/version'
 require "rss/maker"
 require "open-uri"
-require "hpricot"
+require "oga"
 
 module Feedalizer
   class Feed
@@ -24,8 +24,8 @@ module Feedalizer
       @rss.channel
     end
 
-    def scrape_items(hpricot_query, limit = 15)
-      elements = @page.search(hpricot_query)
+    def scrape_items(query, limit = 15)
+      elements = @page.xpath(query)
     
       elements.first(limit).each do |html_element|
         rss_item = @rss.items.new_item
@@ -34,7 +34,7 @@ module Feedalizer
     end
 
     def grab_page(url)
-      open(url) { |io| Hpricot(io) }
+      open(url) { |io| Oga.parse_html(io) }
     end
 
     def output
