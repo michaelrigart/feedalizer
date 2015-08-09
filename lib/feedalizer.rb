@@ -5,7 +5,7 @@ require "oga"
 
 module Feedalizer
   class Feed
-    IDENTIFIER = "Feedalizer/#{Feedalizer::VERSION} (http://termos.vemod.net/feedalizer)"
+    IDENTIFIER = "Feedalizer/#{Feedalizer::VERSION} (https://github.com/michaelrigart/feedalizer)"
   
     attr_reader :page
 
