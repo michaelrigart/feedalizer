@@ -1,0 +1,7 @@
+* Add more examples
+* Write some documentation (tutorial?)
+* Add note about CGI
+* Cache the retrieved HTML during script development?
+* Write unit test(s) for debug mode.
+* Add timeout control (a bit tricky to do nicely)
+* Restructure CHANGELOG.txt
