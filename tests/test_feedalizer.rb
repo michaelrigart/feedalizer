@@ -9,7 +9,7 @@ class TestFeedalizer < Test::Unit::TestCase
   TEST_FILE = File.join(File.dirname(__FILE__), "test.html")
 
   def setup
-    @feedalizer = Feedalizer.new(TEST_FILE)
+    @feedalizer = Feedalizer::Feed.new(TEST_FILE)
   end
 
   def test_construction
@@ -19,8 +19,8 @@ class TestFeedalizer < Test::Unit::TestCase
 
   def test_block
     inside = nil
-    Feedalizer.new(TEST_FILE) { inside = self } rescue nil
-    assert_kind_of Feedalizer, inside
+    Feedalizer::Feed.new(TEST_FILE) { inside = self } rescue nil
+    assert_kind_of Feedalizer::Feed, inside
   end
 
   def test_defaults
