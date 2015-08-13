@@ -1,3 +1,5 @@
+[![Code Climate](https://codeclimate.com/github/michaelrigart/feedalizer/badges/gpa.svg)](https://codeclimate.com/github/michaelrigart/feedalizer)
+
 # Feedalizer
 
 Feedalizer is a *small* Ruby library that glues together Hpricot with the standard RSS library in a way that makes it easy to transform web pages into RSS feeds. If you ask me, it makes it *too* easy.
