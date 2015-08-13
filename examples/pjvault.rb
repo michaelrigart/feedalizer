@@ -7,18 +7,17 @@ $LOAD_PATH.unshift File.join(File.dirname(__FILE__), "..", "lib")
 require "feedalizer"
 require "time"
 
-feedalize("http://pjvault.com/news.html") do
+feedalize("http://pjvault.com/news77.html") do
   feed.title = "Pearl Jam Vault"
   feed.description = "Pearl Jam News and Reviews"
 
-  scrape_items("li") do |rss_item, html_element|
-    link = html_element.search("a").first
+  scrape_items("//LI") do |rss_item, html_element|
+    link = html_element.xpath("a").first
 
-    rss_item.link  = link.attributes["href"]
-    rss_item.date  = Time.parse(html_element.to_s)
-    rss_item.title = link.children.last.to_s
+    rss_item.link  = link.get("href")
+    rss_item.title = link.inner_text
 
-    rss_item.description = html_element.inner_html
+    rss_item.description = html_element.inner_text
   end
 
   output!
