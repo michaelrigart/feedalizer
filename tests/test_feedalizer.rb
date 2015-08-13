@@ -2,10 +2,10 @@
 
 $LOAD_PATH.unshift File.join(File.dirname(__FILE__), '..', 'lib')
 
-require "test/unit"
+require "minitest/autorun"
 require "feedalizer"
 
-class TestFeedalizer < Test::Unit::TestCase
+class TestFeedalizer < Minitest::Test
   TEST_FILE = File.join(File.dirname(__FILE__), "test.html")
 
   def setup
