@@ -1,12 +1,12 @@
 require 'feedalizer/version'
-require "rss/maker"
-require "open-uri"
-require "oga"
+require 'rss/maker'
+require 'open-uri'
+require 'oga'
 
 module Feedalizer
   class Feed
     IDENTIFIER = "Feedalizer/#{Feedalizer::VERSION} (https://github.com/michaelrigart/feedalizer)"
-  
+
     attr_reader :page
 
     def initialize(url, &block)
@@ -26,7 +26,7 @@ module Feedalizer
 
     def scrape_items(query, limit = 15)
       elements = @page.xpath(query)
-    
+
       elements.first(limit).each do |html_element|
         rss_item = @rss.items.new_item
         yield rss_item, html_element
@@ -47,7 +47,7 @@ module Feedalizer
 
     def debug!
       @rss.items.each do |item|
-        STDERR.puts [ item.title, item.date, item.link ].join("; ")
+        STDERR.puts [item.title, item.date, item.link].join('; ')
       end
     end
   end

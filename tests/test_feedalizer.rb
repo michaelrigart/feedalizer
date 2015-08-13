@@ -2,11 +2,11 @@
 
 $LOAD_PATH.unshift File.join(File.dirname(__FILE__), '..', 'lib')
 
-require "minitest/autorun"
-require "feedalizer"
+require 'minitest/autorun'
+require 'feedalizer'
 
 class TestFeedalizer < Minitest::Test
-  TEST_FILE = File.join(File.dirname(__FILE__), "test.html")
+  TEST_FILE = File.join(File.dirname(__FILE__), 'test.html')
 
   def setup
     @feedalizer = Feedalizer::Feed.new(TEST_FILE)
@@ -19,7 +19,7 @@ class TestFeedalizer < Minitest::Test
 
   def test_block
     inside = nil
-    Feedalizer::Feed.new(TEST_FILE) { inside = self } rescue nil
+    Feedalizer::Feed.new(TEST_FILE) { inside = self }
     assert_kind_of Feedalizer::Feed, inside
   end
 
@@ -29,7 +29,7 @@ class TestFeedalizer < Minitest::Test
   end
 
   def test_page
-    assert_equal "Test", @feedalizer.page.xpath("/html/head/title").text
+    assert_equal 'Test', @feedalizer.page.xpath('/html/head/title').text
   end
 
   def test_scrape_items
@@ -48,7 +48,7 @@ class TestFeedalizer < Minitest::Test
   def test_scrape_items_limit
     elements = []
 
-    @feedalizer.scrape_items('//div[@class="item"]', 1) do |item, element|
+    @feedalizer.scrape_items('//div[@class="item"]', 1) do |_item, element|
       elements << element
     end
 
@@ -58,23 +58,23 @@ class TestFeedalizer < Minitest::Test
   def test_grab_page
     assert_kind_of Oga::XML::Document, @feedalizer.grab_page(TEST_FILE)
   end
-  
+
   def test_existance_of_generator
     f = @feedalizer.feed
-    
-    f.about = f.title = f.description = "..."
-    
-    assert @feedalizer.output.include?("Feedalizer")
+
+    f.about = f.title = f.description = '...'
+
+    assert @feedalizer.output.include?('Feedalizer')
   end
 
   def test_output
     f = @feedalizer.feed
-    
-    f.about = f.title = f.description = "..."
+
+    f.about = f.title = f.description = '...'
 
     output = @feedalizer.output
 
-    assert output.include?("<rss")
+    assert output.include?('<rss')
     assert output.size > 320
   end
 end
