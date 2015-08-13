@@ -1,5 +1,0 @@
-#!/usr/bin/env ruby
-
-require "feedalizer"
-
-eval(ARGF.read)
