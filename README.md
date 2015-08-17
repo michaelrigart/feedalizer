@@ -2,28 +2,29 @@
 
 # Feedalizer
 
-Feedalizer is a *small* Ruby library that glues together Hpricot with the standard RSS library in a way that makes it easy to transform web pages into RSS feeds. If you ask me, it makes it *too* easy.
+Feedalizer is a *small* Ruby library that glues together Oga with the standard RSS library in a way that makes it easy to transform web pages into RSS feeds. If you ask me, it makes it *too* easy.
 
-This gem was originally created by [Christoffer Sawicki](http://qerub.se/feedalizer) who made the last version 0.1.2. During my search for a way to convert web pages to RSS feeds, I came upon this Gem and decided to revive it again.
+This gem was originally created by [Christoffer Sawicki](http://qerub.se/feedalizer) who made the last version 0.1.2. During my search for a way to convert web pages to RSS feeds, I came upon this Gem and decided to revive it again. It originally used [Hpricot](https://github.com/hpricot/hpricot) which isn't supported anymore. So I just yanked it out and replaced it with [Oga](https://github.com/YorickPeterse/oga). 
 
-I'm currently still waiting for author approval on RubyGems.org. If I don't hear back from Christoffer, I'll re-release the gem under a new name.
+In the process, I made some minor adjustments to the Gem layout.
+
+Christoffer has been so kind to grant me author approval on RubyGems.org so I could make the necessary changes to update this gem.
+
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'feedalizer', git: 'git://github.com/michaelrigart/feedalizer.git'
+gem 'feedalizer'
 ```
 
 And then execute:
 
     $ bundle
 
-<!---
 Or install it yourself as:
 
     $ gem install feedalizer
---->
 
 ## Usage
 
