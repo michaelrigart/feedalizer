@@ -1,4 +1,4 @@
-[![Code Climate](https://codeclimate.com/github/michaelrigart/feedalizer/badges/gpa.svg)](https://codeclimate.com/github/michaelrigart/feedalizer)
+[![Code Climate](https://codeclimate.com/github/michaelrigart/feedalizer/badges/gpa.svg)](https://codeclimate.com/github/michaelrigart/feedalizer) [![Gem Version](https://badge.fury.io/rb/feedalizer.svg)](http://badge.fury.io/rb/feedalizer)
 
 # Feedalizer
 
