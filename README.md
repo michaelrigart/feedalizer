@@ -1,5 +1,4 @@
-[![Build Status](https://semaphoreci.com/api/v1/projects/305c6445-cd61-4d6f-9166-21ed33313499/514830/badge.svg)](https://semaphoreci.com/michaelrigart/feedalizer)      
- [![Code Climate](https://codeclimate.com/github/michaelrigart/feedalizer/badges/gpa.svg)](https://codeclimate.com/github/michaelrigart/feedalizer) [![Gem Version](https://badge.fury.io/rb/feedalizer.svg)](http://badge.fury.io/rb/feedalizer)
+[![Build Status](https://semaphoreci.com/api/v1/projects/305c6445-cd61-4d6f-9166-21ed33313499/514830/badge.svg)](https://semaphoreci.com/michaelrigart/feedalizer) [![Code Climate](https://codeclimate.com/github/michaelrigart/feedalizer/badges/gpa.svg)](https://codeclimate.com/github/michaelrigart/feedalizer) [![Gem Version](https://badge.fury.io/rb/feedalizer.svg)](http://badge.fury.io/rb/feedalizer)
 
 # Feedalizer
 
